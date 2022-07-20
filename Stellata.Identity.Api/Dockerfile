@@ -12,9 +12,9 @@ WORKDIR "/src/Stellata.Identity.Api"
 #RUN dotnet build "Stellata.Identity.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Stellata.Identity.Api.csproj" -c Release -o out
+RUN dotnet publish "Stellata.Identity.Api.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/out .
+COPY --from=publish /app/publish .
 CMD dotnet Stellata.Identity.Api.dll
