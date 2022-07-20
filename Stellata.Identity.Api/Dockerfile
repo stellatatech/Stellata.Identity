@@ -1,14 +1,14 @@
-﻿#FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
-#WORKDIR /app
+﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
+WORKDIR /app
 
 COPY ["Stellata.Identity.Api/Stellata.Identity.Api.csproj", "Stellata.Identity.Api/"]
 RUN dotnet restore "Stellata.Identity.Api/Stellata.Identity.Api.csproj"
 
 COPY . ./
-WORKDIR "/src/Stellata.Identity.Api"
+#WORKDIR "/src/Stellata.Identity.Api"
 #RUN dotnet build "Stellata.Identity.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
