@@ -1,0 +1,10 @@
+bin/
+obj/
+/packages/
+riderModule.iml
+/_ReSharper.Caches/
+
+/Stellata.Identity.Api/bin/
+/Stellata.Identity.Api/obj/
+/Stellata.Identity.Api/.idea/
+.idea/.idea.Stellata.Identity/.idea/

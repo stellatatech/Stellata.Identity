@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stellata.Identity.DataAccess", "Stellata.Identity.DataAccess\Stellata.Identity.DataAccess.csproj", "{B5964BF2-7D80-4155-A0EF-F98B74E85D9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stellata.Identity.BusinessLogic", "Stellata.Identity.BusinessLogic\Stellata.Identity.BusinessLogic.csproj", "{74310415-60CA-4AAC-9A6A-EA288D254772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stellata.Identity.Api", "Stellata.Identity.Api\Stellata.Identity.Api.csproj", "{3B398A2B-BCE4-47C2-8C9D-07B1A8252A05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5964BF2-7D80-4155-A0EF-F98B74E85D9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5964BF2-7D80-4155-A0EF-F98B74E85D9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5964BF2-7D80-4155-A0EF-F98B74E85D9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5964BF2-7D80-4155-A0EF-F98B74E85D9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74310415-60CA-4AAC-9A6A-EA288D254772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74310415-60CA-4AAC-9A6A-EA288D254772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74310415-60CA-4AAC-9A6A-EA288D254772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74310415-60CA-4AAC-9A6A-EA288D254772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B398A2B-BCE4-47C2-8C9D-07B1A8252A05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B398A2B-BCE4-47C2-8C9D-07B1A8252A05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B398A2B-BCE4-47C2-8C9D-07B1A8252A05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B398A2B-BCE4-47C2-8C9D-07B1A8252A05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
