@@ -17,4 +17,4 @@ RUN dotnet publish "Stellata.Identity.Api.csproj" -c Release -o /app/publish
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Stellata.Identity.Api.dll"]
+CMD dotnet Stellata.Identity.Api.dll
