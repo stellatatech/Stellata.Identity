@@ -8,7 +8,7 @@ COPY ["Stellata.Identity.Api/Stellata.Identity.Api.csproj", "Stellata.Identity.A
 RUN dotnet restore "Stellata.Identity.Api/Stellata.Identity.Api.csproj"
 
 COPY . ./
-#WORKDIR "/src/Stellata.Identity.Api"
+WORKDIR "/src/Stellata.Identity.Api"
 #RUN dotnet build "Stellata.Identity.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
