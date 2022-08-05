@@ -22,12 +22,18 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        var appSettings = new AppSettings();
-        return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+        List<string> keys = new List<string>();
+        var envars = Environment.GetEnvironmentVariables();
+        foreach (object envar in envars.Keys)
+        {
+            keys.Add(envar?.ToString() ?? "OOps");
+        }
+        
+        return Enumerable.Range(0, envars.Count - 1).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = appSettings?.ConnectionStrings?.Test ?? "Wrong"
+                Summary = keys[index]
             })
             .ToArray();
     }
