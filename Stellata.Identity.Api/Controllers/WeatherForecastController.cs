@@ -31,7 +31,7 @@ public class WeatherForecastController : ControllerBase
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = _options.Value.ConnectionStrings.Test
+                Summary = _options?.Value?.ConnectionStrings?.Test ?? "HI"
             })
             .ToArray();
     }
