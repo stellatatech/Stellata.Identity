@@ -29,7 +29,7 @@ public class WeatherForecastController : ControllerBase
             keys.Add(envarsKey?.ToString() ?? "No");
         }
         
-        return Enumerable.Range(1, envars.Count).Select(index => new WeatherForecast
+        return Enumerable.Range(0, envars.Count -1).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
