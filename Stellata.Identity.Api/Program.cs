@@ -1,7 +1,15 @@
+using Stellata.Identity.Api;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+//Bind app settings to model
+var appSettings = new AppSettings();
+builder.Configuration.Bind(appSettings);
+builder.Services.AddSingleton(appSettings);
 
+Console.WriteLine(appSettings?.ConnectionStrings?.Test);
+
+// Add services to the container.
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
