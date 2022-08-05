@@ -1,5 +1,6 @@
 using System.Collections;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Stellata.Identity.Api.Controllers;
 
@@ -14,26 +15,23 @@ public class WeatherForecastController : ControllerBase
 
     private readonly ILogger<WeatherForecastController> _logger;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    private readonly IOptions<AppSettings> _options;
+
+    public WeatherForecastController(ILogger<WeatherForecastController> logger, IOptions<AppSettings> options)
     {
         _logger = logger;
+        _options = options;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
-        List<string> keys = new List<string>();
-        var envars = Environment.GetEnvironmentVariables();
-        foreach (object envar in envars.Keys)
-        {
-            keys.Add(envar?.ToString() ?? "OOps");
-        }
         
-        return Enumerable.Range(0, envars.Count - 1).Select(index => new WeatherForecast
+        return Enumerable.Range(0, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = keys[index]
+                Summary = _options.Value.ConnectionStrings.Test
             })
             .ToArray();
     }

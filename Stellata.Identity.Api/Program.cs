@@ -27,6 +27,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-app.MapGet("/", () => appSettings?.ConnectionStrings?.Test ?? "OOps");
 
 app.Run();
